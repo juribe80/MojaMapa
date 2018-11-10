@@ -71,10 +71,10 @@
     <br>
 
     <b>Waypoints:</b> <br>
-    <input type="text" id="wayPoint" value=""> <button  id="next" onclick="addWayPoint()">Add</button>
+    <input type="text" id="wayPoint" value=""> <button  id="next" onclick="addWayPoint()">Remove</button>
     <ul id="wayPoints">
-      <li class="wayPoint">Myrtle Beach, SC <button  id="next" onclick="addWayPoint()">Add</button></li>
-      <li class="wayPoint">Atlanta, GA <button  id="next" onclick="addWayPoint()">Add</button></li>
+      <li class="wayPoint">Myrtle Beach, SC <button onclick="removeWayPoint()">Remove</button></li>
+      <li class="wayPoint">Atlanta, GA  <button onclick="removeWayPoint()">Remove</button></li>
     </ul>
 
     <!--
@@ -117,8 +117,8 @@
       }
 
       function removeWayPoint(){
-        var elem = document.getElementById('newWayPoint');
-        var elem2 = document.getElementById('newWayPointButton');
+        var elem = document.getElementById('wayPoint');
+        var elem2 = document.getElementById('wayPointButton');
         elem.parentNode.removeChild(elem);
         elem2.parentNode.removeChild(elem2);
       }
@@ -146,10 +146,10 @@
             stopover: true
           });
         });
-       
+      /*       
        $.each(waypts, function( index, value ){
         console.log(value);
-      });
+      }); */
 
         /*
         var checkboxArray = document.getElementById('waypoints');
