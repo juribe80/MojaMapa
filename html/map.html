@@ -50,6 +50,7 @@
         height: 174px;
       }
     </style>
+    <script src="jquery-3.3.1.min.js"></script>
   </head>
   <body>
     <div id="map"></div>
@@ -71,7 +72,12 @@
 
     <b>Waypoints:</b> <br>
     <input type="text" id="wayPoint" value=""> <button  id="next" onclick="addWayPoint()">Add</button>
+    <ul id="wayPoints">
+      <li class="wayPoint">Myrtle Beach, SC <button  id="next" onclick="addWayPoint()">Add</button></li>
+      <li class="wayPoint">Atlanta, GA <button  id="next" onclick="addWayPoint()">Add</button></li>
+    </ul>
 
+    <!--
     <b>Waypoints:</b> <br>
     <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
 
@@ -85,7 +91,7 @@
       <option value="spokane, wa">Spokane</option>
     </select>
 
-    <br>
+    <br> -->
     <b>End:</b>
     <br>
     <input type="text" id="end" value="">
@@ -105,8 +111,9 @@
     <script>
 
       function addWayPoint(){
-        var p ="<p id=\"newWayPoint\">" + document.getElementById('wayPoint').value + "<input id=\"newWayPointButton\" type=\"button\" value=\"Remove\" onclick=\"removeWayPoint()\"/> </p>";
-        document.getElementById("next").insertAdjacentHTML('afterend', p);
+        console.log(document.getElementById('wayPoint').value);
+        var li ="<li class=\"wayPoint\">" + document.getElementById('wayPoint').value + "</li>";
+        document.getElementById("wayPoints").insertAdjacentHTML('beforeend', li);
       }
 
       function removeWayPoint(){
@@ -132,6 +139,19 @@
 
       function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         var waypts = [];
+
+        $(".wayPoint").each(function(){
+          waypts.push({
+            location: $(this).text(),
+            stopover: true
+          });
+        });
+       
+       $.each(waypts, function( index, value ){
+        console.log(value);
+      });
+
+        /*
         var checkboxArray = document.getElementById('waypoints');
         for (var i = 0; i < checkboxArray.length; i++) {
           if (checkboxArray.options[i].selected) {
@@ -140,7 +160,7 @@
               stopover: true
             });
           }
-        }
+        }*/
 
         directionsService.route({
           origin: document.getElementById('start').value,
