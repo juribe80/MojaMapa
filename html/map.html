@@ -71,10 +71,10 @@
     <br>
 
     <b>Waypoints:</b> <br>
-    <input type="text" id="wayPoint" value=""> <button  id="next" onclick="addWayPoint()">Remove</button>
+    <input type="text" id="wayPointText" value=""> <button  id="next" onclick="addWayPoint()">Add</button>
     <ul id="wayPoints">
-      <li class="wayPoint">Myrtle Beach, SC <button onclick="removeWayPoint()">Remove</button></li>
-      <li class="wayPoint">Atlanta, GA  <button onclick="removeWayPoint()">Remove</button></li>
+      <li id="wayPoint" class="wayPoint">Myrtle Beach, SC <button id="wayPointButton" onclick="removeWayPoint()">Remove</button></li>
+      <li id="wayPoint" class="wayPoint">Atlanta, GA  <button id="wayPointButton" onclick="removeWayPoint()">Remove</button></li>
     </ul>
 
     <!--
@@ -111,9 +111,10 @@
     <script>
 
       function addWayPoint(){
-        console.log(document.getElementById('wayPoint').value);
-        var li ="<li class=\"wayPoint\">" + document.getElementById('wayPoint').value + "</li>";
+        console.log(document.getElementById('wayPointText').value);
+        var li ="<li id=\"wayPoint\" class=\"wayPoint\">" + document.getElementById('wayPointText').value + " <button id=\"wayPointButton\" onclick=\"removeWayPoint()\">Remove</button></li>";
         document.getElementById("wayPoints").insertAdjacentHTML('beforeend', li);
+        document.getElementById('wayPointText').value = "";
       }
 
       function removeWayPoint(){
