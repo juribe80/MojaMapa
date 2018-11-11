@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </head>
+
+<style>
+.dib {
+    display: inline-block;
+}
+
+
+.b {
+    font-weight: bold;
+}
+
+.link {
+    text-decoration: none;
+    transition: color .15s ease-in;
+}
+
+.link:link, .link:visited {
+    transition: color .15s ease-in;
+}
+
+.link:hover {
+    transition: color .15s ease-in;
+}
+
+.link:active {
+    transition: color .15s ease-in;
+}
+
+.link:focus {
+    transition: color .15s ease-in;
+    outline: 1px dotted currentColor;
+}
+
+.black {
+    color: #000;
+}
+
+.gray {
+    color: #777;
+}
+
+.pa3 {
+    padding: 0.750rem;
+}
+
+.mr3 {
+    margin-right: 1rem;
+}
+
+.f6 {
+    font-size: 1.975rem;
+}
+
+.dim {
+    opacity: 1;
+    transition: opacity .15s ease-in;
+}
+
+.dim:hover, .dim:focus {
+    opacity: .5;
+    transition: opacity .15s ease-in;
+}
+
+.dim:active {
+    opacity: .8;
+    transition: opacity .15s ease-out;
+}
+.avenir {
+  font-family: 'avenir next', avenir, sans-serif;
+}
+
+/*.dark-green {
+    color: #137752;
+}
+*/
+.writtenContent {
+  margin-top: 45px;
+}
+
+
+.flex-grid {
+  display: flex;
+}
+.flex-grid .col {
+  flex: 1;
+}
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+.myIcons {
+  font-family: 'avenir next', avenir, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+@media (max-width: 400px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+}
+.flex-grid {
+  margin: 0 0 20px 0;
+}
+.col {
+  padding: 20px;
+}
+
+@media screen and (min-width: 30em) {
+    .pa4-ns {
+        padding: 2rem;
+    }
+
+    .f5-ns {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+    .f4-m {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .f3-l {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (min-width: 30em) {
+    .pv4-ns {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+    .ph4-m {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .ph5-l {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+
+body {
+  font-family: sans-serif;
+ }
+
+/*.carousel {
+  background: #EEE;
+} */
+
+.carousel-cell {
+  width: 66%;
+  height: 350px;
+  margin-right: 10px;
+  /*background: #8C8; */
+  border-radius: 5px;
+  /*counter-increment: gallery-cell; */
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  /*content: counter(gallery-cell); */
+  line-height: 200px;
+}
+
+.w2 {
+    width: 2rem;
+}
+
+.gray {
+    color: #777;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/*.icons:hover {
+    opacity: 0.6;
+                  transition: opacity .55s ease-in-out;
+                  -moz-transition: opacity .55s ease-in-out;
+                  -webkit-transition: opacity .55s ease-in-out;
+}
+*/
+.bg-lightest-gray {
+    background-color: #cdecff;
+}
+/* Container needed to position the button. Adjust the width as needed */
+
+.cover {
+    background-size: cover !important;
+    width: 100%;
+}
+
+.dt {
+    display: table;
+}
+
+.dtc {
+    display: table-cell;
+}
+
+.athelas {
+    font-family: athelas, georgia, serif;
+}
+
+.i {
+    font-style: italic;
+}
+
+.fs-normal {
+    font-style: normal;
+}
+
+.fw1 {
+    font-weight: 100;
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.tracked {
+    letter-spacing: .1em;
+}
+
+.lh-title {
+    line-height: 1.25;
+}
+
+.lh-copy {
+    line-height: 1.5;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.white-70 {
+    color: rgba(255, 255, 255, .7);
+}
+
+.white-60 {
+    color: rgba(255, 255, 255, .6);
+}
+
+.white {
+    color: #fff;
+}
+
+.bg-dark-gray {
+    background-color: #333;
+}
+
+.pv5 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.ph0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ph2 {
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.mb2 {
+    margin-bottom: .5rem;
+}
+
+.mh0 {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.tc {
+    text-align: center;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+.f1 {
+    font-size: 3rem;
+}
+
+.measure {
+    max-width: 30em;
+}
+
+.measure-wide {
+    max-width: 34em;
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.v-mid {
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 60em) {
+    .f-headline-l {
+        font-size: 6rem;
+    }
+}
+
+</style>
+
+<body>
+<script>
+//var elem = document.querySelector('.main-carousel');
+//var flkty = new Flickity( elem, {
+  // options
+  //cellAlign: 'left',
+  //contain: true
+//});
+
+// element argument can be a selector string
+//   for an individual element
+//var flkty = new Flickity( '.main-carousel', {
+  // options
+//});
+
+jQuery(function($) {
+
+  $(document.body).fadeIn(1000);
+
+});
+</script>
+
+<!--<nav class="pa3 pa4-ns">
+  <h2 class="avenir f2 fw2">
+  <a class="link dim dark-green b f4 f5-ns dib mr3" href="#" title="Home">mojamapa</a>
+  <a class="link dim gray f4 f5-ns dib mr3 tr" href="#writtenContent" title="About">About Us</a>
+  <a class="link dim gray f4 f5-ns dib mr3 tr" href="#contactInfo" title="Store">Contact Us</a>
+  </h2>
+</nav> -->
+
+<header class="bg-white w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
+  <nav class="f4 fw6 ttu tracked">
+    <a class="link dim dark-green dib mr3" href="#" title="Home">mojamapa</a>
+    <a class="link dim black dib mr3" href="#writtenContent" title="About">About</a>
+    <a class="link dim black dib" href="#contactInfo" title="Contact">Contact</a>
+  </nav>
+</header>
+
+
+<div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="background:url(https://images.pexels.com/photos/297642/pexels-photo-297642.jpeg) no-repeat center;">
+   <div class="dtc v-mid">
+     <header class="white">
+       <h2 class="f1 ttu tracked mb2 ">MOJAMAPA</h2>
+       <h3 class="f6 fw1 lh-title"><b>Your Personal Trip Planner</b></h3>
+     </header>
+     <!--<h1 class="f1 f-headline-l fw1">The Chronicles</h1> -->
+     <div class="ph3">
+       <a class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-black" href="#0">Let's Get Going!</a>
+     </div>
+   </div>
+ </div>
+
+<!--<div class="flex items-center justify-center pa4 bg-lightest-gray navy">
+  <span class="lh-title ml3">
+    <div class="ph3 mb4 tc">
+      <h2 class="avenir f2 fw2">
+        <a class="f2 link dim br3 b ba bw2 ph3 pv2 mb2 dib dark-green" href="#0">Let's Get Going!</a>
+      </h2></span>
+    </div>
+</div>
+-->
+
+<br>
+
+<!--<div class="carousel" data-flickity='{ "autoPlay": true }'>
+  <div class="carousel-cell">
+    <img src="map.jpg"> </img>
+  </div>
+  <div class="carousel-cell">
+  <img src="cliff.jpeg"> </img>
+</div>
+  <div class="carousel-cell">
+<img src="carefree.jpeg"> </img>
+  </div>
+</div> -->
+
+<div id="writtenContent">
+<article class="helvetica pa4">
+  <p class="f4 f4-ns lh-copy measure center">
+    Coordinating and planning road trips can be a pain. Cross-referencing different websites, writing down your itinerary, and tracking a budget on top of that? That's why we at <b>mojamapa</b> have come up with the perfect solution - let us handle the logistics!
+  </p>
+  <blockquote class="ph0 f4 f1-ns measure-narrow center">
+    <p class="fw9 lh-copy lh-title-ns">We know you have places to be. And we want to be the ones to help you get there.
+    </p>
+  </blockquote>
+  <p class="f4 f4-ns lh-copy measure center">
+    Look to us for the centralized source for planning the perfect road trip. Drop a pin to your intended destination, and find some neat spots along the way. Foodies, nature buffs, and obscure museum aficianados are all welcome to plan -- and what's more, plan around your own personal budget.
+  </p>
+
+</article>
+</div>
+
+<div class="myIcons">
+<div class="flex-grid-thirds">
+  <div class="col"><div class="icons"><center><img src="icons/price_icon.png"></img></div></div>
+  <div class="col"><div class="icons"><center><img src="icons/food_icon.jpg"></img></div></div>
+  <div class="col"><div class="icons"><center><img src="icons/place_icon.jpg"></img></div></div>
+</div>
+
+<div class="flex-grid-thirds">
+  <div class="col f6"><center><h2 class="avenir f3 fw2">Find Affordable Trips</h2></div>
+  <div class="col f6"><center><h2 class="avenir f3 fw2">Get Your Grub On</h2></div>
+  <div class="col f6"><center><h2 class="avenir f3 fw2">Pinpoint Your Stops</h2></div>
+  </div>
+</div>
+
+
+<div id="contactInfo">
+<footer class="pv4 ph3 ph5-ns tc">
+  <a class="link dim dark-green dib h2 w2 br-100 mr3 " href="#" title="">
+    <svg data-icon="facebook" viewBox="0 0 32 32" style="fill:currentcolor">
+      <title>facebook icon</title>
+      <path d="M8 12 L13 12 L13 8 C13 2 17 1 24 2 L24 7 C20 7 19 7 19 10 L19 12 L24 12 L23 18 L19 18 L19 30 L13 30 L13 18 L8 18 z"></path>
+    </svg>
+  </a>
+  <a class="link dim dark-green dib h2 w2 br-100 mr3 " href="#" title="">
+    <svg data-icon="twitter" viewBox="0 0 32 32" style="fill:currentcolor">
+      <title>twitter icon</title>
+      <path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"></path>
+    </svg>
+  </a>
+  <a class="link dim dark-green dib br-100 h2 w2 mr3 " href="#https://github.com/juribe80/MojaMapa" title="">
+    <svg data-icon="github" viewBox="0 0 32 32" style="fill:currentcolor">
+      <title>github icon</title>
+      <path d="M0 18 C0 12 3 10 3 9 C2.5 7 2.5 4 3 3 C6 3 9 5 10 6 C12 5 14 5 16 5 C18 5 20 5 22 6 C23 5 26 3 29 3 C29.5 4 29.5 7 29 9 C29 10 32 12 32 18 C32 25 30 30 16 30 C2 30 0 25 0 18 M3 20 C3 24 4 28 16 28 C28 28 29 24 29 20 C29 16 28 14 16 14 C4 14 3 16 3 20 M8 21 A1.5 2.5 0 0 0 13 21 A1.5 2.5 0 0 0 8 21 M24 21 A1.5 2.5 0 0 0 19 21 A1.5 2.5 0 0 0 24 21 z"></path>
+    </svg>
+  </a>
+  <center>
+  <div class="mt4">
+    <a href="#" class="f4 link dim dark-green dib mr3 mr4-ns">Help</a>
+    <a href="#" class="f4 link dim dark-green dib mr3 mr4-ns">Send feedback</a>
+    <a href="#" class="f4 link dim dark-green dib mr3 mr4-ns">Privacy</a>
+    <a href="#" class="f4 link dim dark-green dib">Terms</a>
+  </div>
+</center>
+</div>
+</footer>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+ </body>
+</html>
